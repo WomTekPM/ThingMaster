@@ -1,0 +1,1105 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_MONGODB",
+      "label": "MongoDB",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "grafana-mongodb-datasource",
+      "pluginName": "MongoDB"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "camera-control-panel",
+      "name": "Camera Control Panel",
+      "version": "0.0.1"
+    },
+    {
+      "type": "panel",
+      "id": "dashlist",
+      "name": "Dashboard list",
+      "version": "5.0.0"
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "5.5.0-pre1"
+    },
+    {
+      "type": "panel",
+      "id": "grafana-clock-panel",
+      "name": "Clock",
+      "version": "0.1.0"
+    },
+    {
+      "type": "datasource",
+      "id": "grafana-mongodb-datasource",
+      "name": "MongoDB",
+      "version": "1.3.5"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": "5.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "singlestat",
+      "name": "Singlestat",
+      "version": "5.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "switch-button-panel",
+      "name": "Switch Button Panel",
+      "version": "0.0.1"
+    },
+    {
+      "type": "panel",
+      "id": "text",
+      "name": "Text",
+      "version": "5.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "tq-alarm-panel",
+      "name": "Simple Alarm Panel",
+      "version": "0.0.1"
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "content": "<img src=\"public/img/logo.png\" height=\"35\" alt=\"womaster\">",
+      "gridPos": {
+        "h": 2,
+        "w": 4,
+        "x": 0,
+        "y": 0
+      },
+      "id": 20,
+      "links": [],
+      "mode": "html",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "bgColor": null,
+      "clockType": "12 hour",
+      "countdownSettings": {
+        "customFormat": null,
+        "endCountdownTime": "2018-07-07T01:53:00.000Z",
+        "endText": "00:00:00"
+      },
+      "dateSettings": {
+        "dateFormat": "YYYY-MM-DD",
+        "fontSize": "20px",
+        "fontWeight": "normal",
+        "showDate": false
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 8,
+        "x": 4,
+        "y": 0
+      },
+      "id": 10,
+      "links": [],
+      "mode": "time",
+      "offsetFromUtc": null,
+      "offsetFromUtcMinutes": null,
+      "timeSettings": {
+        "customFormat": "HH:mm:ss",
+        "fontSize": "40px",
+        "fontWeight": "normal"
+      },
+      "title": "Time",
+      "type": "grafana-clock-panel"
+    },
+    {
+      "alarmserver": "https://192.168.10.101/alert/rule",
+      "fontColor": null,
+      "fontSize": "30px",
+      "fontWeight": "normal",
+      "gridPos": {
+        "h": 2,
+        "w": 8,
+        "x": 12,
+        "y": 0
+      },
+      "id": 14,
+      "links": [],
+      "realthreshold": 1200,
+      "scbaddr": "192.168.10.1",
+      "threshold": "1200",
+      "title": "CO2 Alarm",
+      "titleLabel": "Current Threshold",
+      "type": "tq-alarm-panel"
+    },
+    {
+      "audioaddr": "192.168.10.1",
+      "gridPos": {
+        "h": 2,
+        "w": 3,
+        "x": 20,
+        "y": 0
+      },
+      "id": 8,
+      "links": [],
+      "mic_off": "https://192.168.10.101/alert/rule4",
+      "mic_on": "https://192.168.10.101/alert/rule3",
+      "switch": false,
+      "targetip": "192.168.10.1",
+      "title": "Voice Switch",
+      "tmaddr": "192.168.10.101",
+      "transparent": true,
+      "type": "switch-button-panel"
+    },
+    {
+      "folderId": null,
+      "gridPos": {
+        "h": 10,
+        "w": 4,
+        "x": 0,
+        "y": 2
+      },
+      "headings": false,
+      "id": 27,
+      "limit": 10,
+      "links": [],
+      "query": "",
+      "recent": false,
+      "search": false,
+      "starred": true,
+      "tags": [],
+      "title": "Site List",
+      "type": "dashlist"
+    },
+    {
+      "alarmserver": "https://192.168.10.101/alert/rule2",
+      "camaddr": "rtsp://admin:hk888888@192.168.10.102:554",
+      "cameraip": "rtsp://admin:hk888888@192.168.10.102:554",
+      "fontColor": null,
+      "fontSize": "30px",
+      "fontWeight": "normal",
+      "gridPos": {
+        "h": 1,
+        "w": 10,
+        "x": 4,
+        "y": 2
+      },
+      "id": 29,
+      "links": [],
+      "scbaddr": "",
+      "title": "Camera Setting",
+      "titleLabel": "Camera IP Address",
+      "transparent": true,
+      "type": "camera-control-panel"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "${DS_MONGODB}",
+      "format": "ppm",
+      "gauge": {
+        "maxValue": 3000,
+        "minValue": 0,
+        "show": true,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 3,
+        "x": 14,
+        "y": 2
+      },
+      "id": 6,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "channel": {
+            "text": "select channel",
+            "value": null
+          },
+          "feed": {
+            "text": "select feed",
+            "value": null
+          },
+          "hide": false,
+          "rawQuery": true,
+          "refId": "A",
+          "target": "db.data.aggregate ( [ \n { \"$match\" : { \"$and\" : [  { \"start\" :  {\"$gte\" : \"$from\", \"$lte\" : \"$to\"},   \"end\" :  {\"$lte\" : \"$to\"} }, {  \"IPADD\" : \"192.168.10.1\"} ]}},\n {\"$project\" :   {  \"name\" : \"CO2\",   \"value\" : \"$CO2\",  \"at\" : \"$at\",  \"_id\" : 0} } ])",
+          "type": "timeserie"
+        }
+      ],
+      "thresholds": "1000,2000",
+      "title": "CO2",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": true,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "${DS_MONGODB}",
+      "decimals": null,
+      "format": "humidity",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": true,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 3,
+        "x": 17,
+        "y": 2
+      },
+      "id": 25,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "channel": {
+            "text": "select channel",
+            "value": null
+          },
+          "feed": {
+            "text": "select feed",
+            "value": null
+          },
+          "rawQuery": true,
+          "refId": "A",
+          "target": "db.data.aggregate ( [ \n { \"$match\" : { \"$and\" : [  { \"start\" :  {\"$gte\" : \"$from\", \"$lte\" : \"$to\"},   \"end\" :  {\"$lte\" : \"$to\"} }, {  \"IPADD\" : \"192.168.10.1\"} ]}},\n {\"$project\" :   {  \"name\" : \"Humidity\",   \"value\" : { \"$divide\": [ \"$Humidity\" , 10 ]},  \"at\" : \"$at\",  \"_id\" : 0} } ])",
+          "type": "timeserie"
+        }
+      ],
+      "thresholds": "50,75",
+      "title": "Humidity",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "${DS_MONGODB}",
+      "format": "celsius",
+      "gauge": {
+        "maxValue": 50,
+        "minValue": 0,
+        "show": true,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 3,
+        "x": 20,
+        "y": 2
+      },
+      "id": 22,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "channel": {
+            "text": "select channel",
+            "value": null
+          },
+          "feed": {
+            "text": "select feed",
+            "value": null
+          },
+          "rawQuery": true,
+          "refId": "A",
+          "target": "db.data.aggregate ( [ \n { \"$match\" : { \"$and\" : [  { \"start\" :  {\"$gte\" : \"$from\", \"$lte\" : \"$to\"},   \"end\" :  {\"$lte\" : \"$to\"} }, {  \"IPADD\" : \"192.168.10.1\"} ]}}, \n {\"$project\" :   {  \"name\" : \"Temperature\",    \"value\" :  { \"$divide\": [ \"$Temperature\" , 10 ]},  \"at\" : \"$at\",  \"_id\" : 0} } ])",
+          "type": "timeserie"
+        }
+      ],
+      "thresholds": "21,27",
+      "title": "Temperature",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "content": "<!DOCTYPE html>\n    <html>\n    <title>RTSP Player Page</title>\n        <style type=\"text/css\">\n            body, html\n            {\n                margin: 0; padding: 0; height: 100%; overflow: hidden;\n            }\n\n            #content\n            {\n                position:absolute; left: 0; right: 0; bottom: 0; top: 0px; \n            }\n        </style>\n    <body>\n        <div id=\"content\">\n            <iframe width=\"100%\" height=\"100%\" frameborder=\"0\" src=\"./public/plugins/wom-datasource/video2/index.html?ip=192.168.10.102\" />\n        </div>\n</body>\n</html>",
+      "gridPos": {
+        "h": 10,
+        "w": 10,
+        "x": 4,
+        "y": 3
+      },
+      "id": 12,
+      "links": [],
+      "mode": "html",
+      "title": "Video Stream",
+      "type": "text"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "${DS_MONGODB}",
+      "format": "conμgm3",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": true,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 14,
+        "y": 9
+      },
+      "id": 23,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "channel": {
+            "text": "select channel",
+            "value": null
+          },
+          "feed": {
+            "text": "select feed",
+            "value": null
+          },
+          "rawQuery": true,
+          "refId": "A",
+          "target": "db.data.aggregate ( [ \n { \"$match\" : { \"$and\" : [  { \"start\" :  {\"$gte\" : \"$from\", \"$lte\" : \"$to\"},   \"end\" :  {\"$lte\" : \"$to\"} }, {  \"IPADD\" : \"192.168.10.1\"} ]}},\n {\"$project\" :   {  \"name\" : \"PM1\",   \"value\" : \"$PM1\",  \"at\" : \"$at\",  \"_id\" : 0} } ])",
+          "type": "timeserie"
+        }
+      ],
+      "thresholds": "20,50",
+      "title": "PM1",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "${DS_MONGODB}",
+      "format": "conμgm3",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": true,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 17,
+        "y": 9
+      },
+      "id": 18,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "channel": {
+            "text": "select channel",
+            "value": null
+          },
+          "feed": {
+            "text": "select feed",
+            "value": null
+          },
+          "rawQuery": true,
+          "refId": "A",
+          "target": "db.data.aggregate ( [ \n { \"$match\" : { \"$and\" : [  { \"start\" :  {\"$gte\" : \"$from\", \"$lte\" : \"$to\"},   \"end\" :  {\"$lte\" : \"$to\"} }, {  \"IPADD\" : \"192.168.10.1\"} ]}},\n {\"$project\" :   {  \"name\" : \"PM2.5\",   \"value\" : \"$PM2_5\",  \"at\" : \"$at\",  \"_id\" : 0} } ])",
+          "type": "timeserie"
+        }
+      ],
+      "thresholds": "20,50",
+      "title": "PM2.5",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "${DS_MONGODB}",
+      "format": "conμgm3",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": true,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 20,
+        "y": 9
+      },
+      "id": 24,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "channel": {
+            "text": "select channel",
+            "value": null
+          },
+          "feed": {
+            "text": "select feed",
+            "value": null
+          },
+          "rawQuery": true,
+          "refId": "A",
+          "target": "db.data.aggregate ( [ \n { \"$match\" : { \"$and\" : [  { \"start\" :  {\"$gte\" : \"$from\", \"$lte\" : \"$to\"},   \"end\" :  {\"$lte\" : \"$to\"} }, {  \"IPADD\" : \"192.168.10.1\"} ]}},\n {\"$project\" :   {  \"name\" : \"PM10\",   \"value\" : \"$PM10\",  \"at\" : \"$at\",  \"_id\" : 0} } ])",
+          "type": "timeserie"
+        }
+      ],
+      "thresholds": "20,50",
+      "title": "PM10",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_MONGODB}",
+      "fill": 1,
+      "gridPos": {
+        "h": 4,
+        "w": 14,
+        "x": 0,
+        "y": 13
+      },
+      "id": 2,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "channel": {
+            "text": "select channel",
+            "value": null
+          },
+          "feed": {
+            "text": "select feed",
+            "value": null
+          },
+          "rawQuery": true,
+          "refId": "A",
+          "target": "db.data.aggregate ( [ \n { \"$match\" : { \"$and\" : [  { \"start\" :  {\"$gte\" : \"$from\", \"$lte\" : \"$to\"},   \"end\" :  {\"$lte\" : \"$to\"} }, {  \"IPADD\" : \"192.168.10.1\"} ]}},      \n {\"$project\" :   {  \"name\" : \"CO2\",   \"value\" : \"$CO2\",  \"at\" : \"$at\",  \"_id\" : 0} } ])",
+          "type": "timeserie"
+        },
+        {
+          "hide": false,
+          "rawQuery": true,
+          "refId": "B",
+          "target": "db.data.aggregate ( [ \n { \"$match\" : { \"$and\" : [  { \"start\" :  {\"$gte\" : \"$from\", \"$lte\" : \"$to\"},   \"end\" :  {\"$lte\" : \"$to\"} }, {  \"IPADD\" : \"192.168.10.1\"} ]}},\n {\"$project\" :   {  \"name\" : \"Temperature\",    \"value\" :  { \"$divide\": [ \"$Temperature\" , 10 ]},  \"at\" : \"$at\",  \"_id\" : 0} } ])",
+          "type": "timeserie"
+        },
+        {
+          "rawQuery": true,
+          "refId": "C",
+          "target": "db.data.aggregate ( [ \n { \"$match\" : { \"$and\" : [  { \"start\" :  {\"$gte\" : \"$from\", \"$lte\" : \"$to\"},   \"end\" :  {\"$lte\" : \"$to\"} }, {  \"IPADD\" : \"192.168.10.1\"} ]}},\n {\"$project\" :   {  \"name\" : \"Humidity\",   \"value\" : { \"$divide\": [ \"$Humidity\" , 10 ]},  \"at\" : \"$at\",  \"_id\" : 0} } ])",
+          "type": "timeserie"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Sensors",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_MONGODB}",
+      "fill": 1,
+      "gridPos": {
+        "h": 7,
+        "w": 9,
+        "x": 14,
+        "y": 15
+      },
+      "id": 16,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "channel": {
+            "text": "select channel",
+            "value": null
+          },
+          "feed": {
+            "text": "select feed",
+            "value": null
+          },
+          "rawQuery": true,
+          "refId": "A",
+          "target": "db.data.aggregate ( [ \n { \"$match\" : { \"$and\" : [  { \"start\" :  {\"$gte\" : \"$from\", \"$lte\" : \"$to\"},   \"end\" :  {\"$lte\" : \"$to\"} }, {  \"IPADD\" : \"192.168.10.1\"} ]}},\n {\"$project\" :   {  \"name\" : \"PM1\",   \"value\" : \"$PM1\",  \"at\" : \"$at\",  \"_id\" : 0} } ])",
+          "type": "timeserie"
+        },
+        {
+          "rawQuery": true,
+          "refId": "B",
+          "target": "db.data.aggregate ( [ \n { \"$match\" : { \"$and\" : [  { \"start\" :  {\"$gte\" : \"$from\", \"$lte\" : \"$to\"},   \"end\" :  {\"$lte\" : \"$to\"} }, {  \"IPADD\" : \"192.168.10.1\"} ]}},  \n {\"$project\" :   {  \"name\" : \"PM2.5\",   \"value\" : \"$PM2_5\",  \"at\" : \"$at\",  \"_id\" : 0} } ])",
+          "type": "timeserie"
+        },
+        {
+          "rawQuery": true,
+          "refId": "C",
+          "target": "db.data.aggregate ( [ \n { \"$match\" : { \"$and\" : [  { \"start\" :  {\"$gte\" : \"$from\", \"$lte\" : \"$to\"},   \"end\" :  {\"$lte\" : \"$to\"} }, {  \"IPADD\" : \"192.168.10.1\"} ]}},     \n {\"$project\" :   {  \"name\" : \"PM10\",   \"value\" : \"$PM10\",  \"at\" : \"$at\",  \"_id\" : 0} } ])",
+          "type": "timeserie"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Air Pollution",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_MONGODB}",
+      "fill": 1,
+      "gridPos": {
+        "h": 4,
+        "w": 14,
+        "x": 0,
+        "y": 17
+      },
+      "id": 4,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": false,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "channel": {
+            "text": "select channel",
+            "value": null
+          },
+          "feed": {
+            "text": "select feed",
+            "value": null
+          },
+          "rawQuery": true,
+          "refId": "A",
+          "target": "db.data.aggregate ( [ \n { \"$match\" : { \"$and\" : [  { \"start\" :  {\"$gte\" : \"$from\", \"$lte\" : \"$to\"},   \"end\" :  {\"$lte\" : \"$to\"} }, {  \"IPADD\" : \"192.168.10.1\"} ]}},\n {\"$project\" :   {  \"name\" : \"CO2\",   \"value\" : \"$CO2\",  \"at\" : \"$at\",  \"_id\" : 0} } ])",
+          "type": "timeserie"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "CO2 Per/10s Count",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "histogram",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 16,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "Demo Site - SCB1200",
+  "uid": "4ezqyyDmz",
+  "version": 73
+}
